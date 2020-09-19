@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
         searchField: state.searchRobots.searchField,
         robots: state.requestRobots.robots,
         isPending: state.requestRobots.isPending,
-        error: state.requestRobots.error
+        error: state.requestRobots.error,
     };
 };
 
@@ -22,12 +22,11 @@ const mapDispatchToProps = (dispatch) => {
         onSearchChange: (event) => {
             dispatch(setSearchField(event.target.value));
         },
-        onRequestRobots: () => dispatch(requestRobots())
+        onRequestRobots: () => dispatch(requestRobots()),
     };
 };
 
 class App extends Component {
-    
     componentDidMount() {
         this.props.onRequestRobots();
     }
